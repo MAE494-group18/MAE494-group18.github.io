@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Engineering Update</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html">Home</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="specs.html">Specifications</a></li>
+							<li><a href="research.html">Research</a></li>
+							<li><a href="eng-up.html">Engineering Update</a></li>
+							<li><a href="proj-man.html">Project Management</a></li>
+							<li><a href="proto-up.html">Prototype Update</a></li>
+							<li><a href="group-profile.html">Group Profile</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+      <div id="main" class="wrapper style1">
+        <div class="container">
+          <header class="major">
+            <h2>Engineering Update</h2>
+          </header>
+
+          <!-- Content -->
+            <section id="content">
+              <div class="box alt">
+              <p>The primary goal of any wind turbine design is the longevity and durability of turbine blades. Turbine blades need to sustain high magnitudes of stress for a large number of loading cycles in order to be cost effective. Estimating the lifespan of blade components or system involves multiple steps including determining the expected stress, the type of loading experienced by individual components, determining how airflow impacts the blade, and estimating the number of loading cycles that can be survived.</p>
+              </div>
+            <div class="box alt">
+              <h3>Number of Loading Cycles Survived</h3>
+              <p><span class="image left"><img src="images/eqn1.jpg" alt="" /></span>The number of loading cycles that can be sustained is estimated with this equation. It is important to note that this would be the final step in our analysis, as the stresses would need to be computed using CFD, FEA, and standard equations. After that, this equation is used where:</p>
+              <ul>
+                <li>N is the number of loading cycles sustained</li>
+                <li>S<sub>∞</sub> is the fatigue limit of the material</li>
+                <li>S<sub>a</sub> is the stress amplitude for a single loading cycle</li>
+                <li>C is a material constant</li>
+              </ul>
+              <h3>Torsion of Spars</h3>
+              <p><span class="image right"><img src="images/eqn2.jpg" alt="" /></span>A critical contribution to the maximum stress of the spar structure is the torsion experienced by the twisting action of the blades, as well as uneven distribution of lift on the blade itself. Weight reduction of the blades is a signifcant goal, and therefore thin-walled spars were determined to be used within the blades. The shear strain as a result of torsion in these thin-walled spars is given the equation to the right where:</p>
+              <ul>
+                <li>θ is the angle of twist</li>
+                <li>z is the axial distance along the spar</li>
+                <li>T is the torque endured by the spar</li>
+                <li>G is the shear modulus of the spar</li>
+                <li>t is the tickness of the spar</li>
+                <li>A is the cross-sectional enclosed area</li>
+              </ul>
+              <p><span class="image right"><img src="images/eqn3.jpg" alt="" /></span>The equation on the right is how the torque will be determined from a single spar. It utilizes components of lift nad drag on the blade through a cross-product. This equation is more applicable to general sizing than a final analysis, where computational tools will be used. The variables here are:</p>
+              <ul>
+                <li>T<sub>net</sub> is the net torque</li>
+                <li>r<sub>cg</sub> is the distance to the center of gravity of the cross section</li>
+                <li>r<sub>ac</sub> is the distance to the aerodynamic center of the cross section</li>
+                <li>L is the overall lift</li>
+                <li>D is the overall drag</li>
+                <li>c is the chord length of an airfoil section</li>
+                <li>W is the weight of the blade</li>
+              </ul>
+              <h3>Bending of Blade Spars</h3>
+              <p><span class="image left"><img src="images/eqn4.jpg" alt="" /></span>The equation to the left indicates how bending moment along a spar will be roughly calculated. The bending moment from weight and aerodynamic contributions will be significant and changing during blade rotation. These variables are:</p>
+              <ul>
+                <li>M<sub>x</sub> is the bending moment</li>
+                <li>L<sub>y</sub> is the local y-component of lift</li>
+                <li>D<sub>y</sub> is the local y-component of drag</li>
+                <li>b is the span of the blade or spar</li>
+                <li>V is the internal shear force</li>
+              </ul>
+              <p><span class="image left"><img src="images/eqn5.jpg" alt="" /></span>From the bending moment equation above, we can determine the bending stress with the equation to the left. Similar equations exist for examining bending stress along other coordinates, as well as asymmetric bending. It is important to note that asymmetric bending can occur as I<sub>xy</sub> is non-zero for asymmetric cross-sections. The new variables here are:</p>
+              <ul>
+                <li>σ<sub>x</sub> is the bending stress</li>
+                <li>I<sub>xx</sub> is the moment of inertia</li>
+                <li>y is distance along the cross section where stress will be examined</li>
+              </ul>
+              <h3>Bucking of Spars</h3>
+              <p><span class="image right"><img src="images/eqn6.jpg" alt="" /></span>The buckling of spar sections is another concern as the blades will find themselves in a vertical position as they rotate, and therefore experience the weight of themselves. It is important to estimate what the minimum buckling load is and ensure that the weight does not exceed this load. The formula on the right gives this estimate where: </p>
+              <ul>
+                <li>P<sub>crit</sub> is the critical buckling load</li>
+                <li>I is the moment of inertia</li>
+                <li>L is the length of the spar in question</li>
+                <li>𝜋 is a universal constant</li>
+              </ul>
+              <h3>Sowtware Use</h3>
+              <div class="box alt"><div class="row 50% uniform">
+              <div class="4u  6u(xsmall)"><span class="image fit"><figure><img src="images/torsion_gif.gif" alt="Torsion" />
+                <figcaption>Torsion animation from an FEA program.</figcaption></figure></span>
+              </div>
+              <div class="4u  6u$(xsmall)"><span class="image fit"><figure><img src="images/nasa_cfd.jpg" alt="Computational Fluid Dynamics" />
+                <figcaption>An example of Computational Fluid Dynamics.</figcaption></figure></span>
+              </div>
+              <div class="4u$  6u(xsmall)"><span class="image fit"><figure><img src="images/bending_gif.gif" alt="Bending" />
+                <figcaption>Pure Bending animation from an FEA program.</figcaption></figure></span></div>
+              </div>
+              <p>With the anticipation of a control system rapidly changing the direction of the wings
+in the flow field, it is important to use some computational fluid dynamics software to
+ensure loss of lift, high drag, stall and flow separation do not occur during the blade
+rotations. Open Source projects such as <a href="http://www.openfoam.com/">OpenFOAM</a> or <a href="http://su2.stanford.edu/">SU2</a>
+are powerful but are
+difficult to set up. The control system can also be used to avoid these scenarios, and
+are therefore not as important to analyze. Commercial packages for the finite element
+analysis, such as Creo Simulate, are already familiar and are the likely choice to
+examine the stress and deformation characteristics under various rotation stages.</p>
+            <h3>Analysis Results</h3>
+            <p>
+              As we develop our computational models, we'll post updates here to display our results. We intend to document
+              what we learn from our basic and advanced analysis techniques, and discuss how they influence any changes in
+              our prototype. Changes made to the prototype will also be available on our <a href="proto-up.html">Prototype Update</a>
+              page.
+            </P>
+
+
+            </div>
+
+            </section>
+
+        </div>
+      </div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/MAE494-group18" class="icon fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:mpkozak@buffalo.edu" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+          <ul class="copyright">
+						<li>&copy; 2017 - All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
